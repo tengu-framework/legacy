@@ -29,6 +29,16 @@ $oni = new Oni\Registry;
 
 /*
  * ---------------------------------------------------------------
+ * Initiate Whoops and set Whoops as the default
+ * error and exception handler in PHP
+ * ---------------------------------------------------------------
+ */
+$oni->whoops = new Whoops\Run();
+$oni->whoops->pushHandler(new Whoops\Handler\PrettyPageHandler());
+$oni->whoops->register();
+
+/*
+ * ---------------------------------------------------------------
  * Initiate the router class
  * ---------------------------------------------------------------
  */

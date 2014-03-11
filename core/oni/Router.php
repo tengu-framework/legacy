@@ -46,7 +46,7 @@ class Router
 	{
 		// Check if the path is a directory
 		if (is_dir($path) == false) {
-			throw new Exception('Invalid controller path: "'.$path.'"');
+			throw new \Exception('Invalid controller path: "'.$path.'"');
 		}
 
 		// If path is a directory, set it!
@@ -65,7 +65,7 @@ class Router
 
 		// Check if file is readable, if not redirect to 404
 		if (is_readable($this->file) == false) {
-			die ('404: File Not Found ("'.$this->file.'")');
+			throw new \Exception('404: File Not Found ("'.$this->file.'")');
 		}
 
 		// Include controller
