@@ -12,6 +12,11 @@
  {
  	public function index($name = '')
  	{
- 		echo Model\Welcome::hello('Godzilla');
+ 		$hello = Model\Welcome::hello('Godzilla');
+
+ 		$this->oni->view->set('hello', $hello);
+ 		$this->oni->view->render('hello');
  	}
  }
+
+ /* End of file application/controller/Home.php */

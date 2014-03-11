@@ -52,4 +52,4 @@ class Registry
 	}
 }
 
-/* End of file core/Oni/Registry.php */
+/* End of file core/oni/Registry.php */

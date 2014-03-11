@@ -13,10 +13,8 @@ class Welcome extends \Oni\Model
 {
 	public static function hello($name)
 	{
-		$oni = \Oni\Registry::getInstance();
-
-		$string  = 'Hello '.$name.'! Nice to meet you! I am Oni!';
-		
-		return $string;
+		return 'Hello '.$name.'! Nice to meet you! I am Oni!';
 	}
 }
+
+ /* End of file application/model/Walcome.php */

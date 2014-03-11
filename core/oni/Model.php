@@ -9,17 +9,12 @@
  */
 namespace Oni;
 
-abstract class Controller
+abstract class Model
 {
-	/**
-	 * Controller construct method
-	 *
-	 * @param  object  $registry
-	 */
 	public function __construct()
 	{
 		$this->oni = \Oni\Registry::getInstance();
 	}
 }
 
-/* End of file core/oni/Controller.php */
+/* End of file core/oni/Model.php */
