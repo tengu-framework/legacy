@@ -11,7 +11,7 @@ defined('BASE_PATH') or exit('No direct script access allowed.');
 
 /*
  * ---------------------------------------------------------------
- * LOAD COMPOSER AUTOLOADER
+ * Load Composer autoloader
  * ---------------------------------------------------------------
  */
 if ( ! is_readable(VENDOR_PATH.'/autoload.php')) {
@@ -19,5 +19,26 @@ if ( ! is_readable(VENDOR_PATH.'/autoload.php')) {
 }
 
 require VENDOR_PATH.'/autoload.php';
+
+/*
+ * ---------------------------------------------------------------
+ * Load common functions
+ * ---------------------------------------------------------------
+ */
+require CORE_PATH.'/Oni/Common.php';
+
+/*
+ * ---------------------------------------------------------------
+ * Initiate the registry class
+ * ---------------------------------------------------------------
+ */
+$oni = new Oni\Registry;
+
+/*
+ * ---------------------------------------------------------------
+ * Initiate the router class
+ * ---------------------------------------------------------------
+ */
+$oni->router = new Oni\Router($oni);
 
 /* End of file core/bootstrap.php */

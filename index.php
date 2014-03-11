@@ -89,7 +89,4 @@ define('VENDOR_PATH', BASE_PATH.'/vendor');
 
 require_once(CORE_PATH.'/bootstrap.php');
 
-$test = new \Oni\Test();
-$test->hello();
-
 /* End of file index.php */
