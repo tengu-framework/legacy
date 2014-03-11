@@ -9,12 +9,14 @@
  */
 namespace Model;
 
-class Welcome
+class Welcome extends \Oni\Model
 {
 	public static function hello($name)
 	{
-		$string  = 'Hello '.$name.'! Nice to meet you! I am Oni!<br><br>';
+		$oni = \Oni\Registry::getInstance();
 
+		$string  = 'Hello '.$name.'! Nice to meet you! I am Oni!';
+		
 		return $string;
 	}
 }

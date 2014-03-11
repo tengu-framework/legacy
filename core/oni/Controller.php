@@ -9,20 +9,15 @@
  */
 namespace Oni;
 
-class Controller
+abstract class Controller
 {
-	/**
-	 * The registry object
-	 */
-	private $registry;
-
 	/**
 	 * Controller construct method
 	 *
 	 * @param  object  $registry
 	 */
-	public function __construct($registry)
+	public function __construct()
 	{
-		$this->oni = $registry;
+		$this->oni = \Oni\Registry::getInstance();
 	}
 }

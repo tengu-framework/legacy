@@ -31,9 +31,9 @@ class Router
 	 *
 	 * @param  object  $registry
 	 */
-	public function __construct($registry)
+	public function __construct()
 	{
-		$this->oni = $registry;
+		$this->oni = \Oni\Registry::getInstance();
 	}
 
 	/**
@@ -73,7 +73,7 @@ class Router
 
 		// Initiate new instance of controller class
 		$class       = 'Controller'.ucfirst($this->controller);
-		$controller  = new $class($this->oni);
+		$controller  = new $class;
 
 		$action = $this->action;
 

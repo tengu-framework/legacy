@@ -17,6 +17,21 @@ class Registry
 	private $_map = array();
 
 	/**
+	 * Static instance object
+	 */
+	public static $instance;
+
+	public function __construct()
+	{
+		self::$instance = $this;
+	}
+
+	public static function getInstance()
+	{
+		return self::$instance;
+	}
+
+	/**
 	 * Registry __set method
 	 *
 	 * @return  void

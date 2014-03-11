@@ -10,10 +10,8 @@
 
  class ControllerHome extends Oni\Controller
  {
- 	public function index()
+ 	public function index($name = '')
  	{
- 		echo Model\Welcome::hello('Kai');
- 		
- 		echo 'Home controller has been loaded.<br><br>';
+ 		echo Model\Welcome::hello('Godzilla');
  	}
  }
