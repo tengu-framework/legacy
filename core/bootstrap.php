@@ -33,7 +33,7 @@ $oni = new Oni\Registry;
  * ---------------------------------------------------------------
  */
 $oni->router = new Oni\Router($oni);
-$oni->router->setPath(APP_PATH.'/controllers');
+$oni->router->setPath(APP_PATH.'/controller');
 
 /*
  * ---------------------------------------------------------------

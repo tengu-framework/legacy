@@ -3,8 +3,9 @@
 		"php": ">=5.3"
 	},
 	"autoload": {
-		"psr-0": {
-			"Oni": "core/"
+		"psr-4": {
+			"Oni\\": "core/oni",
+			"Model\\": "application/model"
 		}
 	}
 }

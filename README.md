@@ -18,3 +18,4 @@ The main thing I wanted to do with this, is to create a framework that followed 
 * PSR-0 Compliant
 * PSR-1 Compliant
 * PSR-2 Compliant
+* PSR-4 Compliant

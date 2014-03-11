@@ -12,9 +12,8 @@
  {
  	public function index()
  	{
+ 		echo Model\Welcome::hello('Kai');
+ 		
  		echo 'Home controller has been loaded.<br><br>';
- 		echo '<pre>';
- 		print_r($this->oni);
- 		echo '</pre>';
  	}
  }
