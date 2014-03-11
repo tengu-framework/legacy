@@ -8,10 +8,13 @@
  * @license  MIT License
  */
 
- class ControllerHome
+ class ControllerHome extends Oni\Controller
  {
  	public function index()
  	{
- 		echo 'Home controller has been loaded.';
+ 		echo 'Home controller has been loaded.<br><br>';
+ 		echo '<pre>';
+ 		print_r($this->oni);
+ 		echo '</pre>';
  	}
  }
