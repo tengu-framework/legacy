@@ -73,9 +73,6 @@ switch (ENVIRONMENT) {
  * ---------------------------------------------------------------
  * PATH CONSTANTS
  * ---------------------------------------------------------------
- *
- * Set the main path constants.
- *
  */
 
 define('BASE_PATH', realpath(dirname(__FILE__)));
@@ -88,9 +85,6 @@ define('VENDOR_PATH', BASE_PATH.'/vendor');
  * ---------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
  * ---------------------------------------------------------------
- *
- * And away we go...
- *
  */
 
 require_once(CORE_PATH.'/bootstrap.php');
