@@ -27,4 +27,19 @@ require VENDOR_PATH.'/autoload.php';
  */
 $oni = new Oni\Registry;
 
+/*
+ * ---------------------------------------------------------------
+ * Initiate the router class
+ * ---------------------------------------------------------------
+ */
+$oni->router = new Oni\Router($oni);
+$oni->router->setPath(APP_PATH.'/controllers');
+
+/*
+ * ---------------------------------------------------------------
+ * Hajime!
+ * ---------------------------------------------------------------
+ */
+$oni->router->load();
+
 /* End of file core/bootstrap.php */

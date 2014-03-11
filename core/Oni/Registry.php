@@ -12,32 +12,9 @@ namespace Oni;
 class Registry
 {
 	/**
-	 * Static instance
-	 */
-	private static $_instance;
-
-	/**
 	 * Object hash map
 	 */
 	private $_map = array();
-
-	/**
-	 * Private registry constructor
-	 */
-	private function __construct()
-	{ }
-
-	/**
-	 * Get the singeton instance
-	 */
-	public static function get_instance()
-	{
-		if (self::$_instance === null) {
-			self::$_instance = new self();
-		}
-
-		return self::$_instance;
-	}
 
 	/**
 	 * Registry __set method
