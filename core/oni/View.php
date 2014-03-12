@@ -35,7 +35,7 @@ class View
 
 	public function render($file)
 	{
-		$path = APP_PATH.'/view/'.$file.'.php';
+		$path = APP_PATH.'/views/'.$file.'.php';
 
 		if ( ! file_exists($path)) {
 			die('View not found: ('.$path.')');

@@ -3,9 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-US-Compatible" content="IE=edge">
-	<meta name="viewpoer" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Oni MVC v<?php echo ONI_VERSION; ?></title>
-
 	<!-- CSS -->
 	<?php echo \Oni\Asset::css('bootstrap.min.css'); ?>
 	<?php echo \Oni\Asset::css('cover.css'); ?>
@@ -31,6 +30,7 @@
 				<div class="inner cover">
 					<h1>The Learner's Framework</h1>
 					<p class="lead">Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia?</p>
+					<p class="lead"><?php echo $hello; ?></p>
 				</div>
 				<!-- End of Inner Cover -->
 			</div>

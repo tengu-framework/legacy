@@ -54,7 +54,7 @@ $oni->log->pushHandler(new Monolog\Handler\FirePHPHandler());
  * ---------------------------------------------------------------
  */
 $oni->router = new Oni\Router($oni);
-$oni->router->setPath(APP_PATH.'/controller');
+$oni->router->setPath(APP_PATH.'/controllers');
 
 /*
  * ---------------------------------------------------------------
