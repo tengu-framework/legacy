@@ -7,8 +7,8 @@
 	<title>Oni MVC v<?php echo ONI_VERSION; ?></title>
 
 	<!-- CSS -->
-	<?php echo \Oni\Assets::css('bootstrap.min.css'); ?>
-	<?php echo \Oni\Assets::css('cover.css'); ?>
+	<?php echo \Oni\Asset::css('bootstrap.min.css'); ?>
+	<?php echo \Oni\Asset::css('cover.css'); ?>
 </head>
 <body>
 	<div class="site-wrapper">
@@ -38,7 +38,7 @@
 	</div>
 
 	<!-- JavaScript -->
-	<?php echo \Oni\Assets::js('jquery.v1.11.0.min.js'); ?>
-	<?php echo \Oni\Assets::js('bootstrap.min.js'); ?>
+	<?php echo \Oni\Asset::js('jquery.v1.11.0.min.js'); ?>
+	<?php echo \Oni\Asset::js('bootstrap.min.js'); ?>
 </body>
 </html>
