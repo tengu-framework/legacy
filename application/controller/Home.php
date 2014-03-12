@@ -10,6 +10,13 @@
 
  class ControllerHome extends Oni\Controller
  {
+ 	public function __construct()
+ 	{
+ 		parent::__construct();
+ 		
+ 		$this->oni->log->addInfo('Home controller loaded.');
+ 	}
+
  	public function index($name = '')
  	{
  		$hello = Model\Welcome::hello('Godzilla');

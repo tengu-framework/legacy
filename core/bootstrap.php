@@ -41,11 +41,27 @@ if (ENVIRONMENT == 'development') {
 
 /*
  * ---------------------------------------------------------------
+ * Initiate Monolog to handle logging
+ * ---------------------------------------------------------------
+ */
+$oni->log = new Monolog\Logger('Oni');
+$oni->log->pushHandler(new Monolog\Handler\StreamHandler(APP_PATH.'/logs/'.date('Y-m-d').'.txt', Monolog\Logger::DEBUG));
+$oni->log->pushHandler(new Monolog\Handler\FirePHPHandler());
+
+/*
+ * ---------------------------------------------------------------
  * Initiate the router class
  * ---------------------------------------------------------------
  */
 $oni->router = new Oni\Router($oni);
 $oni->router->setPath(APP_PATH.'/controller');
+
+/*
+ * ---------------------------------------------------------------
+ * Initiate the view class
+ * ---------------------------------------------------------------
+ */
+$oni->config = new Oni\Config;
 
 /*
  * ---------------------------------------------------------------

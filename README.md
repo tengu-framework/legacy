@@ -14,8 +14,12 @@ Conventions
 The main thing I wanted to do with this, is to create a framework that followed some of the standards that have risen within the PHP community.
 
 * PHP >=5.3
-* Uses Composer and it's Autoloader
-* PSR-0 Compliant
+* Composer
 * PSR-1 Compliant
 * PSR-2 Compliant
-* PSR-4 Compliant
+* PSR-3 Compliant (Utilizes Monolog to handle logging)
+* PSR-4 Compliant (Utilizes Composer's autoloader)
+
+Installation
+------------
+Simply run `php composer.phar install` from the root of your installation and you'll be good to go!

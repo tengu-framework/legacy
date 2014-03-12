@@ -81,6 +81,11 @@ class Router
 		$controller->$action();
 	}
 
+	/**
+	 * Finds and validates the requested controller
+	 *
+	 * @return  void
+	 */
 	public function getController()
 	{
 		// Get the route from the URL
@@ -112,6 +117,12 @@ class Router
 		$this->file = $this->path.'/'.ucfirst($this->controller).'.php';
 	}
 
+	/**
+	 * Parses and redirect the URI against the routes defined in /config/routes.php
+	 *
+	 * @param   string  $uri
+	 * @return  void
+	 */
 	private function parseRoutes($uri)
 	{
 		// Include routes config file
