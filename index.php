@@ -12,6 +12,13 @@
  * ---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
  * ---------------------------------------------------------------
+ */
+define('ONI_VERSION', '1.0')
+
+/*
+ * ---------------------------------------------------------------
+ * APPLICATION ENVIRONMENT
+ * ---------------------------------------------------------------
  *
  * You can load different configurations depending on your
  * current environment. Setting the environment also influences
@@ -24,9 +31,7 @@
  *     production
  *
  */
-
 define('ENVIRONMENT', 'development');
-
 
 /*
  * ---------------------------------------------------------------
@@ -35,9 +40,7 @@ define('ENVIRONMENT', 'development');
  *
  * Sets the default timezone used by all date/time functions in the framework.
  */
-
 date_default_timezone_set('America/Los_Angeles');
-
 
 /*
  * ---------------------------------------------------------------
@@ -47,7 +50,6 @@ date_default_timezone_set('America/Los_Angeles');
  * Different environments will require different levels of error reporting.
  * By default development will show errors but testing and live will hide them.
  */
-
 error_reporting(E_ALL);
 
 switch (ENVIRONMENT) {
@@ -68,13 +70,11 @@ switch (ENVIRONMENT) {
 		exit(1);
 }
 
-
 /*
  * ---------------------------------------------------------------
  * PATH CONSTANTS
  * ---------------------------------------------------------------
  */
-
 define('BASE_PATH', realpath(dirname(__FILE__)));
 define('APP_PATH', BASE_PATH.'/application');
 define('CORE_PATH', BASE_PATH.'/core');
@@ -86,7 +86,6 @@ define('VENDOR_PATH', BASE_PATH.'/vendor');
  * LOAD THE BOOTSTRAP FILE
  * ---------------------------------------------------------------
  */
-
 require_once(CORE_PATH.'/bootstrap.php');
 
 /* End of file index.php */
