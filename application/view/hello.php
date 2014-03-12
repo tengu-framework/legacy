@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-US-Compatible" content="IE=edge">
 	<meta name="viewpoer" content="width=device-width, initial-scale=1">
-	<title>Oni MVC v1.0</title>
+	<title>Oni MVC v<?php echo ONI_VERSION; ?></title>
 
 	<!-- CSS -->
 	<?php echo \Oni\Assets::css('bootstrap.min.css'); ?>
@@ -17,7 +17,7 @@
 				<!-- Masthead -->
 				<div class="masthead clearfix">
 					<div class="inner">
-						<h3 class="masthead-brand">Oni MVC <small>v1.0</small></h3>
+						<h3 class="masthead-brand">Oni MVC <small>v<?php echo ONI_VERSION; ?></small></h3>
 						<ul class="nav masthead-nav">
 							<li><a href="#home">Home</a></li>
 							<li><a href="#features">Features</a></li>
