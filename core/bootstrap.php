@@ -33,9 +33,11 @@ $oni = new Oni\Registry;
  * error and exception handler in PHP
  * ---------------------------------------------------------------
  */
-$oni->whoops = new Whoops\Run();
-$oni->whoops->pushHandler(new Whoops\Handler\PrettyPageHandler());
-$oni->whoops->register();
+if (ENVIRONMENT == 'development') {
+	$oni->whoops = new Whoops\Run();
+	$oni->whoops->pushHandler(new Whoops\Handler\PrettyPageHandler());
+	$oni->whoops->register();	
+}
 
 /*
  * ---------------------------------------------------------------
