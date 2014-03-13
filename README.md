@@ -1,9 +1,9 @@
-Oni MVC
-=======
+Tengu Framework
+===============
 
-Oni MVC is an opensource (MIT) MVC framework with the intention of being a learning platform for budding PHP developers.
+Tengu Framework is an opensource (MIT) MVC framework with the intention of being a learning platform for budding PHP developers.
 
-Oni initially started out as a no-name MVC framework for my own personal learning endeavor. I've learned quite a bit since first starting, picking things up here and there from other tutorials and methods I've come across working with other PHP frameworks (CodeIgniter, FuelPHP).
+Tengu initially started out as a no-name MVC framework for my own personal learning endeavor. I've learned quite a bit since first starting, picking things up here and there from other tutorials and methods I've come across working with other PHP frameworks (CodeIgniter, FuelPHP).
 
 Nothing here is new or orginal in a sense. It's been done many times over (and more than likely better than what I can do right now), but that still doesn't change the fact that it's a great learning experience for stepping into real OOP PHP development.
 
@@ -16,7 +16,7 @@ The main thing I wanted to do with this, is to create a framework that followed 
 * PHP >=5.3
 * Composer
 * PSR-1 Compliant
-* PSR-2 Compliant
+* PSR-2 Compliant (Getting there...)
 * PSR-3 Compliant (Utilizes Monolog to handle logging)
 * PSR-4 Compliant (Utilizes Composer's autoloader)
 
