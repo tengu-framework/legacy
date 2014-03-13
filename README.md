@@ -23,3 +23,5 @@ The main thing I wanted to do with this, is to create a framework that followed 
 Installation
 ------------
 Simply run `php composer.phar install` from the root of your installation and you'll be good to go!
+
+<center><img src="http://i.imgur.com/F4ieeq0.png" title="Tengu Logo"></center>
