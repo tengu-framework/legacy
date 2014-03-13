@@ -15,7 +15,7 @@
  		$hello = Model\Welcome::hello('Godzilla');
 
  		$this->oni->theme->setTheme('bootstrap')
- 			->setLayout('public');
+ 			->setLayout('public')
  			->set('hello', $hello)
 			->render('hello');
  	}
