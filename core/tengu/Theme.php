@@ -26,11 +26,34 @@ class Theme
 	 */
 	private $data = array();
 
+	/**
+	 * Theme __construct method
+	 */
 	public function __construct()
 	{
 		$this->tengu = \Tengu\Registry::getInstance();
+
+		// Load the theme config file
+		$this->tengu->config->load('theme');
+
+		// Set theme and layout default from the theme config if they
+		// are null. This allows us to override these settings in any
+		// of our controllers as needed.
+		if (is_null($this->theme)) {
+			$this->setTheme($this->tengu->config->item('theme'));
+		}
+		
+		if (is_null($this->layout)) {
+			$this->setLayout($this->tengu->config->item('theme_layout'));
+		}
 	}
 
+	/**
+	 * Set theme
+	 *
+	 * @param   string  $theme
+	 * @return  object  $this
+	 */
 	public function setTheme($theme = null)
 	{
 		if ( ! $theme !== null) {
@@ -45,6 +68,12 @@ class Theme
 		return $this;
 	}
 
+	/**
+	 * Set layout
+	 *
+	 * @param   string  $layout
+	 * @return  object  $this
+	 */
 	public function setLayout($layout = null)
 	{
 		if ( ! $layout !== null) {
@@ -63,9 +92,9 @@ class Theme
 	/**
 	 * Theme set method
 	 *
-	 * @param  mixed  $key
-	 * @param  mixed  $value
-	 * @return void
+	 * @param   mixed   $key
+	 * @param   mixed   $value
+	 * @return  object  $this
 	 */
 	public function set($key, $value)
 	{
