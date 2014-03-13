@@ -65,10 +65,11 @@ $oni->config = new Oni\Config;
 
 /*
  * ---------------------------------------------------------------
- * Initiate the view class
+ * Initiate the view and theme class
  * ---------------------------------------------------------------
  */
-$oni->view = new Oni\View;
+$oni->view   = new Oni\View;
+$oni->theme  = new Oni\Theme;
 
 /*
  * ---------------------------------------------------------------

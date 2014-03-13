@@ -42,9 +42,7 @@ class View
 		}
 
 		// Load in the variables
-		foreach ($this->data as $key => $value) {
-			$$key = $value;
-		}
+		extract($this->data, EXTR_SKIP);
 
 		include $path;
 	}

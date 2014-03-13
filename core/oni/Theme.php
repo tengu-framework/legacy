@@ -12,51 +12,91 @@ namespace Oni;
 class Theme
 {
 	/**
-	 * Storage for defined view partials
-	 */
-	protected $partials = array();
-
-	/**
 	 * Define theme to load
 	 */
 	public $theme = null;
 
 	/**
-	 * Define template for the loaded theme
+	 * Define layout for the loaded theme
 	 */
-	public $template = null
+	public $layout = null;
+
+	/**
+	 * Private data array used by the set method
+	 */
+	private $data = array();
 
 	public function __construct()
 	{
 		$this->oni = \Oni\Registry::getInstance();
 	}
 
-	public function set_theme($theme = null)
+	public function setTheme($theme = null)
 	{
 		if ( ! $theme !== null) {
-			$this->theme = $theme;
+			if (is_dir(THEME_PATH.'/'.$theme)) {
+				$this->theme = $theme;
+			} else {
+				throw new \Exception('The theme "'.$theme.'" does not appear to exist.');
+			}
+			
 		}
 	}
 
-	public function set_template($template = null)
+	public function setLayout($layout = null)
 	{
-		if ( ! $template !== null) {
-			$this->template = $template;
+		if ( ! $layout !== null) {
+			if ( ! isset($this->theme)) {
+				throw new \Exception("You must first define a theme using setTheme()");
+			} elseif (file_exists(THEME_PATH.'/'.$this->theme.'/layouts/'.$layout.'.php')) {
+				$this->layout = $layout;
+			} else {
+				throw new \Exception('The layout "'.$this->theme.'/layouts/'.$layout.'.php" does not appear to exist.');
+			}
 		}
 	}
 
-	public function render_partial($name)
+	/**
+	 * Theme set method
+	 *
+	 * @param  mixed  $key
+	 * @param  mixed  $value
+	 * @return void
+	 */
+	public function set($key, $value)
 	{
-		$app_location   = APP_PATH.'/view/partial/'.$name.'.php';
-		$theme_location = BASE_PATH.'/themes/'.$this->theme.'/view/partial/'.$name.'.php';
+		$this->data[$key] = $value;
+	}
 
-		if (file_exists($theme_location)) {
-			$location = $theme_location;
-		} elseif (file_exists($app_location) === false) {
-			throw new \Exception ('Partial not found ('.$app_location.')');
+	public function render($view)
+	{
+		$view = $this->getView($view);
+
+		extract($this->data, EXTR_SKIP);
+
+		// Read view file into $content variable
+		ob_start();
+		include $view;
+		$content = ob_get_contents();
+		ob_end_clean();
+
+		include THEME_PATH.'/'.$this->theme.'/layouts/'.$this->layout.'.php';
+	}
+
+	private function getView($view)
+	{
+		$application_path  = APP_PATH.'/views/'.$view.'.php';
+		$theme_path        = THEME_PATH.'/'.$this->theme.'/views/'.$view.'.php';
+
+		if (file_exists($theme_path)) {
+			$path = $theme_path;
+		} elseif ( ! file_exists($application_path)) {
+			throw new \Exception('Theme view not found for '.$view.'.php');
 		} else {
-			$location = $app_location;
+			$path = $application_path;
 		}
+
+		return $path;
 	}
 }
 

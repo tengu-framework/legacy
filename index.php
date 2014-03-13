@@ -78,6 +78,7 @@ switch (ENVIRONMENT) {
 define('BASE_PATH', realpath(dirname(__FILE__)));
 define('APP_PATH', BASE_PATH.'/application');
 define('CORE_PATH', BASE_PATH.'/core');
+define('THEME_PATH', BASE_PATH.'/themes');
 define('VENDOR_PATH', BASE_PATH.'/vendor');
 
 

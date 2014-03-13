@@ -10,19 +10,18 @@
 
  class ControllerHome extends Oni\Controller
  {
- 	public function __construct()
- 	{
- 		parent::__construct();
- 		
- 		$this->oni->log->addInfo('Home controller loaded.');
- 	}
-
  	public function index($name = '')
  	{
  		$hello = Model\Welcome::hello('Godzilla');
 
- 		$this->oni->view->set('hello', $hello);
- 		$this->oni->view->render('hello');
+ 		$this->oni->theme->setTheme('bootstrap');
+ 		$this->oni->theme->setLayout('public');
+
+ 		$this->oni->theme->set('hello', $hello);
+ 		$this->oni->theme->render('hello');
+
+ 		// $this->oni->view->set('hello', $hello);
+ 		// $this->oni->view->render('hello');
  	}
  }
 
