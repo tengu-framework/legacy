@@ -14,9 +14,7 @@
  	{
  		$hello = Model\Welcome::hello('Godzilla');
 
- 		$this->tengu->theme->setTheme('bootstrap')
- 			->setLayout('public')
- 			->set('hello', $hello)
+ 		$this->tengu->theme->set('hello', $hello)
 			->render('hello');
  	}
  }
