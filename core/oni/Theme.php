@@ -36,11 +36,13 @@ class Theme
 		if ( ! $theme !== null) {
 			if (is_dir(THEME_PATH.'/'.$theme)) {
 				$this->theme = $theme;
-			} else {
+			} else
+			{
 				throw new \Exception('The theme "'.$theme.'" does not appear to exist.');
 			}
-			
 		}
+
+		return $this;
 	}
 
 	public function setLayout($layout = null)
@@ -54,6 +56,8 @@ class Theme
 				throw new \Exception('The layout "'.$this->theme.'/layouts/'.$layout.'.php" does not appear to exist.');
 			}
 		}
+
+		return $this;
 	}
 
 	/**
@@ -66,6 +70,8 @@ class Theme
 	public function set($key, $value)
 	{
 		$this->data[$key] = $value;
+
+		return $this;
 	}
 
 	public function render($view)

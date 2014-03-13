@@ -14,14 +14,10 @@
  	{
  		$hello = Model\Welcome::hello('Godzilla');
 
- 		$this->oni->theme->setTheme('bootstrap');
- 		$this->oni->theme->setLayout('public');
-
- 		$this->oni->theme->set('hello', $hello);
- 		$this->oni->theme->render('hello');
-
- 		// $this->oni->view->set('hello', $hello);
- 		// $this->oni->view->render('hello');
+ 		$this->oni->theme->setTheme('bootstrap')
+ 			->setLayout('public');
+ 			->set('hello', $hello)
+			->render('hello');
  	}
  }
 
