@@ -17,7 +17,7 @@ class Config
 	public $config = array();
 
 	/**
-	 * Config constructor
+	 * Config __construct method
 	 *
 	 * Loads the initial config file and stores the parsed results within our global $config array.
 	 * This also checks if the base_url is set in the config file. If not, it will attempt to auto-guess

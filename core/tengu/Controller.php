@@ -12,9 +12,7 @@ namespace Tengu;
 abstract class Controller
 {
 	/**
-	 * Controller construct method
-	 *
-	 * @param  object  $registry
+	 * Controller __construct method
 	 */
 	public function __construct()
 	{

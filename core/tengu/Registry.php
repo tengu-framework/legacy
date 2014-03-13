@@ -21,6 +21,9 @@ class Registry
 	 */
 	public static $instance;
 
+	/**
+	 * Registry __construct method
+	 */
 	public function __construct()
 	{
 		self::$instance = $this;

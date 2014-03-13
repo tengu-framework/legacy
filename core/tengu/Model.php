@@ -11,6 +11,9 @@ namespace Tengu;
 
 abstract class Model
 {
+	/**
+	 * Model __construct method
+	 */
 	public function __construct()
 	{
 		$this->tengu = \Tengu\Registry::getInstance();

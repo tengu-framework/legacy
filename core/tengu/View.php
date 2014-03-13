@@ -16,6 +16,9 @@ class View
 	 */
 	private $data = array();
 
+	/**
+	 * View __construct method
+	 */
 	public function __construct()
 	{
 		$this->tengu = \Tengu\Registry::getInstance();

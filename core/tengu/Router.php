@@ -27,9 +27,7 @@ class Router
 	public $file;
 
 	/**
-	 * Router construct method
-	 *
-	 * @param  object  $registry
+	 * Router __construct method
 	 */
 	public function __construct()
 	{
