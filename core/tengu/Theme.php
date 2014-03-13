@@ -1,13 +1,13 @@
 <?php
 /**
- * Oni MVC Framework
+ * Tengu Framework
  *
- * @package  Oni
+ * @package  Tengu
  * @version  1.0
  * @author   Shea Lewis (Kai) <shea.lewis89@gmail.com>
  * @license  MIT License
  */
-namespace Oni;
+namespace Tengu;
 
 class Theme
 {
@@ -28,7 +28,7 @@ class Theme
 
 	public function __construct()
 	{
-		$this->oni = \Oni\Registry::getInstance();
+		$this->tengu = \Tengu\Registry::getInstance();
 	}
 
 	public function setTheme($theme = null)
@@ -106,4 +106,4 @@ class Theme
 	}
 }
 
-/* End of file core/oni/Theme.php */
+/* End of file core/tengu/Theme.php */

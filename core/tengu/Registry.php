@@ -1,13 +1,13 @@
 <?php
 /**
- * Oni MVC Framework
+ * Tengu Framework
  *
- * @package  Oni
+ * @package  Tengu
  * @version  1.0
  * @author   Shea Lewis (Kai) <shea.lewis89@gmail.com>
  * @license  MIT License
  */
-namespace Oni;
+namespace Tengu;
 
 class Registry
 {
@@ -52,4 +52,4 @@ class Registry
 	}
 }
 
-/* End of file core/oni/Registry.php */
+/* End of file core/tengu/Registry.php */

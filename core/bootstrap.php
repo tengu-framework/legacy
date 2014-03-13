@@ -1,8 +1,8 @@
 <?php
 /**
- * Oni MVC Framework
+ * Tengu Framework
  *
- * @package  Oni
+ * @package  Tengu
  * @version  1.0
  * @author   Shea Lewis (Kai) <shea.lewis89@gmail.com>
  * @license  MIT License
@@ -25,7 +25,7 @@ require VENDOR_PATH.'/autoload.php';
  * Initiate the registry class
  * ---------------------------------------------------------------
  */
-$oni = new Oni\Registry;
+$tengu = new Tengu\Registry;
 
 /*
  * ---------------------------------------------------------------
@@ -34,9 +34,9 @@ $oni = new Oni\Registry;
  * ---------------------------------------------------------------
  */
 if (ENVIRONMENT == 'development') {
-	$oni->whoops = new Whoops\Run();
-	$oni->whoops->pushHandler(new Whoops\Handler\PrettyPageHandler());
-	$oni->whoops->register();	
+	$tengu->whoops = new Whoops\Run();
+	$tengu->whoops->pushHandler(new Whoops\Handler\PrettyPageHandler());
+	$tengu->whoops->register();	
 }
 
 /*
@@ -44,38 +44,38 @@ if (ENVIRONMENT == 'development') {
  * Initiate Monolog to handle logging
  * ---------------------------------------------------------------
  */
-$oni->log = new Monolog\Logger('Oni');
-$oni->log->pushHandler(new Monolog\Handler\StreamHandler(APP_PATH.'/logs/'.date('Y-m-d').'.txt', Monolog\Logger::DEBUG));
-$oni->log->pushHandler(new Monolog\Handler\FirePHPHandler());
+$tengu->log = new Monolog\Logger('Tengu');
+$tengu->log->pushHandler(new Monolog\Handler\StreamHandler(APP_PATH.'/logs/'.date('Y-m-d').'.txt', Monolog\Logger::DEBUG));
+$tengu->log->pushHandler(new Monolog\Handler\FirePHPHandler());
 
 /*
  * ---------------------------------------------------------------
  * Initiate the router class
  * ---------------------------------------------------------------
  */
-$oni->router = new Oni\Router($oni);
-$oni->router->setPath(APP_PATH.'/controllers');
+$tengu->router = new Tengu\Router($tengu);
+$tengu->router->setPath(APP_PATH.'/controllers');
 
 /*
  * ---------------------------------------------------------------
  * Initiate the view class
  * ---------------------------------------------------------------
  */
-$oni->config = new Oni\Config;
+$tengu->config = new Tengu\Config;
 
 /*
  * ---------------------------------------------------------------
  * Initiate the view and theme class
  * ---------------------------------------------------------------
  */
-$oni->view   = new Oni\View;
-$oni->theme  = new Oni\Theme;
+$tengu->view   = new Tengu\View;
+$tengu->theme  = new Tengu\Theme;
 
 /*
  * ---------------------------------------------------------------
  * Hajime!
  * ---------------------------------------------------------------
  */
-$oni->router->load();
+$tengu->router->load();
 
 /* End of file core/bootstrap.php */

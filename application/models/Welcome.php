@@ -1,19 +1,19 @@
 <?php
 /**
- * Oni MVC Framework
+ * Tengu Framework
  *
- * @package  Oni
+ * @package  Tengu
  * @version  1.0
  * @author   Shea Lewis (Kai) <shea.lewis89@gmail.com>
  * @license  MIT License
  */
 namespace Model;
 
-class Welcome extends \Oni\Model
+class Welcome extends \Tengu\Model
 {
 	public static function hello($name)
 	{
-		return 'Hello '.$name.'! Nice to meet you! I am Oni!';
+		return 'Hello '.$name.'! Nice to meet you! I am Tengu!';
 	}
 }
 

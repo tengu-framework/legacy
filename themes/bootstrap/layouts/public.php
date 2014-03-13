@@ -4,10 +4,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-US-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Oni MVC v<?php echo ONI_VERSION; ?></title>
+	<title>Tengu Framework v<?php echo TENGU_VERSION; ?></title>
 	<!-- CSS -->
-	<?php echo \Oni\Asset::css('bootstrap.min.css'); ?>
-	<?php echo \Oni\Asset::css('cover.css'); ?>
+	<?php echo \Tengu\Asset::css('bootstrap.min.css'); ?>
+	<?php echo \Tengu\Asset::css('cover.css'); ?>
 </head>
 <body>
 	<div class="site-wrapper">
@@ -16,7 +16,7 @@
 				<!-- Masthead -->
 				<div class="masthead clearfix">
 					<div class="inner">
-						<h3 class="masthead-brand">Oni MVC <small>v<?php echo ONI_VERSION; ?></small></h3>
+						<h3 class="masthead-brand">Tengu Framework <small>v<?php echo TENGU_VERSION; ?></small></h3>
 						<ul class="nav masthead-nav">
 							<li><a href="#home">Home</a></li>
 							<li><a href="#features">Features</a></li>
@@ -36,7 +36,7 @@
 	</div>
 
 	<!-- JavaScript -->
-	<?php echo \Oni\Asset::js('jquery.v1.11.0.min.js'); ?>
-	<?php echo \Oni\Asset::js('bootstrap.min.js'); ?>
+	<?php echo \Tengu\Asset::js('jquery.v1.11.0.min.js'); ?>
+	<?php echo \Tengu\Asset::js('bootstrap.min.js'); ?>
 </body>
 </html>

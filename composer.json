@@ -1,13 +1,12 @@
 {
 	"require": {
 		"php": ">=5.3",
-		"psr/log": "dev-master",
 		"monolog/monolog": "~1.7",
 		"filp/whoops": "1.0.10"
 	},
 	"autoload": {
 		"psr-4": {
-			"Oni\\": "core/oni",
+			"Tengu\\": "core/tengu",
 			"Model\\": "application/models"
 		}
 	}

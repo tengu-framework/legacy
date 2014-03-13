@@ -1,13 +1,13 @@
 <?php
 /**
- * Oni MVC Framework
+ * Tengu Framework
  *
- * @package  Oni
+ * @package  Tengu
  * @version  1.0
  * @author   Shea Lewis (Kai) <shea.lewis89@gmail.com>
  * @license  MIT License
  */
-namespace Oni;
+namespace Tengu;
 
 class View
 {
@@ -18,7 +18,7 @@ class View
 
 	public function __construct()
 	{
-		$this->oni = \Oni\Registry::getInstance();
+		$this->tengu = \Tengu\Registry::getInstance();
 	}
 
 	/**
@@ -48,4 +48,4 @@ class View
 	}
 }
 
-/* End of file core/oni/View.php */
+/* End of file core/tengu/View.php */
