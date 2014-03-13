@@ -27,10 +27,17 @@ class Theme
 	private $data = array();
 
 	/**
+	 * Static instance object
+	 */
+	public static $instance;
+
+	/**
 	 * Theme __construct method
 	 */
 	public function __construct()
 	{
+		self::$instance = $this;
+
 		$this->tengu = \Tengu\Registry::getInstance();
 
 		// Load the theme config file
@@ -46,6 +53,14 @@ class Theme
 		if (is_null($this->layout)) {
 			$this->setLayout($this->tengu->config->item('theme_layout'));
 		}
+	}
+
+	/**
+	 * Static method to get theme instance
+	 */
+	public static function getInstance()
+	{
+		return self::$instance;
 	}
 
 	/**
@@ -116,6 +131,21 @@ class Theme
 		ob_end_clean();
 
 		include THEME_PATH.'/'.$this->theme.'/layouts/'.$this->layout.'.php';
+	}
+
+	public static function asset($folder, $file)
+	{
+		$tengu = \Tengu\Registry::getInstance();
+		$theme = \Tengu\Theme::getInstance();
+
+		switch($folder) {
+			case 'js':
+				return '<script src="'.$tengu->config->item('base_url').'/themes/'.$theme->theme.'/assets/'.$folder.'/'.$file.'"></script>';
+				break;
+			case 'css':
+				return '<link href="'.$tengu->config->item('base_url').'/themes/'.$theme->theme.'/assets/'.$folder.'/'.$file.'" rel="stylesheet">';
+				break;
+		}
 	}
 
 	private function getView($view)

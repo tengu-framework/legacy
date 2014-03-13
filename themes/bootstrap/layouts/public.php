@@ -7,7 +7,7 @@
 	<title>Tengu Framework v<?php echo TENGU_VERSION; ?></title>
 	<!-- CSS -->
 	<?php echo \Tengu\Asset::css('bootstrap.min.css'); ?>
-	<?php echo \Tengu\Asset::css('cover.css'); ?>
+	<?php echo \Tengu\Theme::asset('css', 'cover.css'); ?>
 </head>
 <body>
 	<div class="site-wrapper">
