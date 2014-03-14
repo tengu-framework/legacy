@@ -15,11 +15,6 @@ class Session
 	 * Class variables
 	 */
 	var $message_id;
-	var $message_types    = array('help', 'info', 'warning', 'success', 'error');
-	var $message_class    = 'message';
-	var $message_wrapper  = "<div class='%s %s'>\n\t%s\n</div>\n";
-	var $message_before   = '<p>';
-	var $message_after    = '</p>';
 
 	/**
 	 * Session __construct method
@@ -30,6 +25,16 @@ class Session
 
 		// Start session
 		$this->start();
+
+		// Generate a unique ID for this user and session
+		$this->message_id = md5(uniqid());
+
+		// Load session config
+		$this->tengu->config->load('session');
+
+		// Assign message config items to the $this object for use by the class
+		$this->message_types = $this->tengu->config->item('message_types');
+		$this->message_class = $this->tengu->config->item('message_class');
 
 		// Create the session array if it doesn't already exist
 		if ( ! array_key_exists('flash_messages', $_SESSION))
@@ -75,7 +80,7 @@ class Session
 		}
 
 		// Make sure it's a valid message type
-		if ( ! in_array($type, $this->message_types)) {
+		if ( ! in_array($type, $this->tengu->config->item('message_types'))) {
 			throw new \Exception('"'.$type.'" is not a valid flash message type.');
 		}
 
@@ -109,10 +114,10 @@ class Session
 		// Print a certain type of message?
 		if (in_array($type, $this->message_types)) {
 			foreach ($_SESSION['flash_messages'][$type] as $message) {
-				$messages .= $this->message_before.$message.$this->message_after;
+				$messages .= $this->tengu->config->item('message_before').$message.$this->tengu->config->item('message_after');
 			}
 
-			$data .= sprintf($this->message_wrapper, $this->message_class, $type, $messages);
+			$data .= sprintf($this->tengu->config->item('message_wrapper'), $this->tengu->config->item('message_class'), $type, $messages);
 
 			// Clear the viewed messages
 			$this->clearFlash($type);
@@ -121,10 +126,10 @@ class Session
 				$messages = '';
 
 				foreach ($message_array as $message) {
-					$messages .= $this->message_before.$message.$this->message_after;
+					$messages .= $this->tengu->config->item('message_before').$message.$this->tengu->config->item('message_after');
 				}
 
-				$data .= sprintf($this->message_wrapper, $this->message_class, $type, $messages);
+				$data .= sprintf($this->tengu->config->item('message_wrapper'), $this->tengu->config->item('message_class'), $type, $messages);
 			}
 
 			// Clear ALL messages
