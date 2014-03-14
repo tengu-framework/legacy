@@ -36,6 +36,12 @@ class View
 		$this->data[$key] = $value;
 	}
 
+	/**
+	 * Render view
+	 *
+	 * @param   string  $file
+	 * @return  void
+	 */
 	public function render($file)
 	{
 		$path = APP_PATH.'/views/'.$file.'.php';

@@ -118,6 +118,12 @@ class Theme
 		return $this;
 	}
 
+	/**
+	 * Render theme view
+	 *
+	 * @param   string  $view
+	 * @return  void
+	 */
 	public function render($view)
 	{
 		$view = $this->getView($view);
