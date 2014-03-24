@@ -2,7 +2,8 @@
 	"require": {
 		"php": ">=5.3",
 		"monolog/monolog": "~1.7",
-		"filp/whoops": "1.0.10"
+		"filp/whoops": "1.0.10",
+		"mobiledetect/mobiledetectlib": "2.7.9"
 	},
 	"autoload": {
 		"psr-4": {
